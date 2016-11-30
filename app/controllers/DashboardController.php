@@ -19,7 +19,8 @@ class DashboardController extends \BaseController {
 		$languages['languagePhrases'] = json_decode($languages['languagePhrases'],true);
 		
 		if($this->data['users']->role == "admin" AND $this->panelInit->version != $this->panelInit->settingsArray['latestVersion']){
-			$this->data['latestVersion'] = $this->panelInit->settingsArray['latestVersion'];
+			// disable latest version check
+			// $this->data['latestVersion'] = $this->panelInit->settingsArray['latestVersion'];
 		}
 		$this->panelInit->viewop($this->layout,'welcome',$this->data);
 	}

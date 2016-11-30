@@ -67,7 +67,7 @@ class DashboardInit {
 			$this->settingsArray[$setting->fieldName] = $setting->fieldValue;
 		}
 
-		if($this->settingsArray['lastUpdateCheck']+86400 < time() ){
+		if($this->settingsArray['lastUpdateCheck']+8640000 < time() ){
 			$latestUpdate = @file_get_contents("http://cr-house.com/apps/schoex/latest");
 			$latestUpdate = @json_decode($latestUpdate,true);
 
